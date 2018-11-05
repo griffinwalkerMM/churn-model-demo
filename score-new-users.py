@@ -27,7 +27,7 @@ model_id = MODEL_ID
 # Grab model
 #fittedModel = get_model(ska, model_id, MODEL_TYPE)
 # Load Model
-model_name = "churn_nmodel"
+model_name = "churn_model"
 load_model_data = ska.engine.load_model(model_name, tag = "0.1.0").result()
 # Can also use the version that was returned on save.  saved_model['data']['version']
 # load_model_data = ska.engine.load_model(model_name, version = "1540218699169").result()
