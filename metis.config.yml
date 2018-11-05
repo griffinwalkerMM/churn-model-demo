@@ -5,3 +5,8 @@ jobs:
     language: python
     name: build-churn-model
     entrypoint: build-churn-model.py
+    
+  - job_id: 3a76475c-bb9d-4796-9f9a-35ae4379e7e4
+    language: python
+    name: score-new-users
+    entrypoint: score-new-users.py
