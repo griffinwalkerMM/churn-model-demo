@@ -57,8 +57,19 @@ ska.log(f"Training accuracy: {model_accuracy} \n ROC_AUC: {model_auc}",
 model_id = MODEL_ID
 
 # output model results as pkl
-save_model(ska, model_id, fittedModel, MODEL_TYPE)
-ska.log(f"Model pickled and saved to S3", labels=["S3saving"], level=logging.INFO)
+#save_model(ska, model_id, fittedModel, MODEL_TYPE)
+#
+
+
+# Get Model Binary Data
+model_data = pickle.dumps(model)
+
+# Save Model
+model_name = 'churn_model'
+saved_model = ska.engine.save_model(model_name, model_data, tags = ["0.1.0", "latest"], access="private").result()
+
+
+ska.log(f"Model pickled and saved", labels=["model_saving"], level=logging.INFO)
 
 
 
