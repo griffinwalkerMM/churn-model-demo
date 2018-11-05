@@ -62,7 +62,7 @@ model_id = MODEL_ID
 
 
 # Get Model Binary Data
-model_data = pickle.dumps(model)
+model_data = pickle.dumps(fittedModel)
 
 # Save Model
 model_name = 'churn_model'
