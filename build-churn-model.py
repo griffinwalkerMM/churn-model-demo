@@ -66,7 +66,7 @@ model_data = pickle.dumps(fittedModel)
 
 # Save Model
 model_name = 'churn_model'
-saved_model = ska.engine.save_model(model_name, model_data, tags = ["0.1.0", "latest"], access="private").result()
+saved_model = ska.engine.save_model(model_name, model_data, tag = "0.1.0").result()
 
 
 ska.log(f"Model pickled and saved", labels=["model_saving"], level=logging.INFO)
